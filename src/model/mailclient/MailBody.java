@@ -44,6 +44,14 @@ public class MailBody {
 		this.signature = Base64.encodeToString(signature);
 	}
 	
+	public MailBody(String encMessage, byte[] iV1, byte[] iV2, String encKey) {
+		super();
+		this.encMessage = encMessage;
+		this.IV1 = Base64.encodeToString(iV1);
+		this.IV2 = Base64.encodeToString(iV2);
+		this.encKey = encKey;
+	}
+	
 	public MailBody(String mailBodyCSV) {
 		String[] parts = mailBodyCSV.split(",");
 		
